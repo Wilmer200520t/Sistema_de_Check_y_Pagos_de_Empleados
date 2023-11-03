@@ -1,0 +1,6 @@
+AL momento de clonar el repositorio la carpeta SQL debe ser excluida del proyecto...
+--
+Configurar la conexion en el archivo ./src/controler/conexion.java segun la base de datos local que use y el puerto.
+--
+1.Correr el archivo reg_empleados_tesla.sql
+2.Correr el archivo stored-procedure.sql en una base de datos.
