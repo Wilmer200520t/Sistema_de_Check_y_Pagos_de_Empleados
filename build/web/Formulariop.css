@@ -1,0 +1,196 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    /*overflow: hidden; Agrega esta propiedad para evitar el desplazamiento */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("../SRC/fondof1.jpg");
+    background-position: center center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+form{
+    /*arriba, derecho, abajo, izquierda*/
+    padding: 50px 55px 160px 55px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 15px rgb(150, 193, 223);
+    border-radius: 30px;
+    text-align: center;
+    width: 500px;/*Altura del formulario*/
+    height: 400px;/*Ancho del formulario*/
+    flex-direction: column;
+    align-items: center;
+}
+.registrarte_is{
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-weight: 100;
+    justify-content: center;
+    align-items: center;
+    
+}
+.registrarte_is a{
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+h2{
+    color: black;
+    font-size: 26px;/*Tamano del titulo del Formulario*/
+    margin: 0;
+    
+}
+.line{
+    display: inline-block;
+    width: 150px;
+    height: 8px;
+    background: linear-gradient(
+        90deg,
+        rgb(169, 232, 209) 0%,
+        rgb(78, 115, 223) 100%);
+    border-radius: 20px;
+}
+label{
+    color: black;
+    font-size: 15px;/*Tamano de las letra de cada pregunta*/
+    font-weight: 400;
+    margin-bottom: 15px;
+    width: auto;
+    text-align: left;
+}
+input{
+    padding: 10px;/*para darle espaciado al placeholder y no se vea tan junto*/
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid rgb(211, 217, 219);
+    color:rgb(0, 0, 0);
+    outline: none;
+    width: 100%;/*TAMANO DEL IMPUT AL 100 %*/
+    margin-top: auto;
+    margin-bottom: auto;
+}
+input::placeholder{
+    color: rgb(178, 182, 182);
+}
+.boton_iniciar_sesion{
+    color: rgb(8, 8, 8);
+    font-size: 15px;
+    font-weight: 600;
+    border: 0;
+    border-radius: 25px;
+    background: linear-gradient(
+        90deg,
+        rgb(169, 232, 209) 0%,
+        rgb(78, 115, 223) 100%);
+    box-shadow: 0 0 20px rgb(166, 158, 223);
+    cursor: pointer;
+    width: 150px;
+    margin-top: 5px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+.boton_iniciar_sesion:hover{
+    background: linear-gradient(
+        90deg,
+        rgb(78, 115, 223) 0%,
+        rgb(169, 232, 209) 100%);
+}
+.mensajeDB{
+    color: red;
+    font-weight: 600;
+}
+a{
+    padding: 10px 0px;/*Modicar tamano del boton cancelar, altura, ancho*/
+    border-radius: 10px;
+    color:rgb(0, 0, 0);
+    outline: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    
+}
+.boton_cancelar {
+    color: rgb(8, 8, 8);
+    font-size: 15px;
+    font-weight: 600;
+    border: 0;
+    border-radius: 25px;
+    background: linear-gradient(
+        90deg,
+        rgb(169, 232, 209) 0%,
+        rgb(78, 115, 223) 100%);
+    box-shadow: 0 0 20px rgb(166, 158, 223);
+    cursor: pointer;
+    width: 150px; /*Para aumentar el tamano de boton */
+    margin-top: 5px;
+    text-decoration: none; /* Para quitar la subrayado del enlace */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.boton_cancelar:hover {
+    background: linear-gradient(
+        90deg,
+        rgb(78, 115, 223) 0%,
+        rgb(169, 232, 209) 100%);
+} 
+.info_inicio_sesion {
+    display: flex;
+    flex-direction: column;/*ORDENA VERTICALMENTE LAS PREGUNTAS*/
+    padding-top: 30px;
+    justify-content: space-between;
+  }
+  
+  .horiform {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .horiform label {
+    flex-basis: 30%; /* Establece el ancho del label al 30% del espacio disponible */
+    margin-bottom: 0;
+  }
+  
+  .horiform .col-sm-6 {
+    flex-basis: 67%; /* Establece el ancho del input al 65% del espacio disponible */
+    display: flex;/*Para que todo este dentro y no se salga*/
+  }
+  .horiformboton {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .input-fecha {
+    color: gray; /* Establece el color gris inicial */
+  }
+  
+  .input-fecha:focus {
+    color: black; /* Cambia el color a negro cuando el campo está en foco */
+  }
+  
+  
+
+  /*Estos 3 me deja los botones en el centro:
+    display: flex;
+    justify-content: space-around;
+    align-items: center;*/
+
+    /*Estos 3 me deja los botones muy a los costados:
+    display: flex;
+    justify-content: space-between;
+    align-items: center;*/
+
+    /*Estos 3 me deja los botones muy junto:
+    display: flex;
+    justify-content: center;
+    align-items: center;*/

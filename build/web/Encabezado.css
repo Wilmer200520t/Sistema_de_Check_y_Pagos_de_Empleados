@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Oswald:wght@300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+*{
+    /*BORDER-BOX:
+    le dice al navegador tomar en cuenta para cualquier valor que
+    se especifique de borde o de relleno para el ancho o alto de un 
+    elemento. Es decir, si se define un elemento con un ancho de 100
+    pixeles. Esos 100 pixeles incluíran cualquier borde o relleno 
+    que se añadan, y la caja de contenido se encogerá para absorber 
+    ese ancho extra. Esto típicamente hace mucho más fácil dimensionar
+    elementos.*/
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+    font-family: 'Oswald';
+    font-size: 20px;
+}
+body{
+    background-color:  rgb(255, 255, 255);
+}
+.encabezado{
+    width: 100%;
+    background-color:rgb(253, 163, 72);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 70px;
+    padding: 5px 3%;
+}
+.encabezado .logoVP{
+    cursor: pointer;
+    margin-right: auto;
+}
+.encabezado .logoVP img{
+    height: 65px;
+    width: auto;
+    transition: all 0.7s;
+}
+/*Esto nos ayudará a dar un efecto cuando pongamos el cursor
+sobre un elemento del encabezado*/
+.encabezado .logoVP img:hover{
+    transform:scale(1.08) ;
+}
+.encabezado .nav_links{
+    list-style: none;
+}
+.encabezado .nav_links li{
+    display: inline-block;
+    padding: 15px 15px 0px ;
+    font-weight: 550;
+}
+.encabezado .nav_links li:hover{
+    transform: scale(1.15);
+}
+.encabezado .nav_links a{
+    font-size: 700;
+    color: rgb(255, 255, 255);
+}
+.encabezado .nav_links li a:hover{
+    color:rgb(80, 80, 80)
+}
+.encabezado .boton_ingresar_registrarse button,
+.encabezado .boton-menu button{
+    margin-left: 10px;
+    height: 50px;
+    font-weight: 700;
+    color: rgb(253, 163, 72);
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    background-color: rgb(255, 255, 255);
+    transition: all 0.3s ease 0s;
+}
+.encabezado .boton_ingresar_registrarse button:hover{
+    background-color: rgb(88, 179, 184);
+    color: rgb(255, 255, 255);
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 950px) {
+    .nav_links, .boton_ingresar_registrarse{
+        display: none;
+    }
+    .boton-menu{
+        display: inherit;
+    }
+}
+
+@media screen and (min-width:950px){
+    .boton-menu{
+        display: none;
+    }
+    .nav_links, .boton_ingresar_registrarse{
+        display: inherit;
+    }
+}
+
+/*--------------------------------Nav--------------------------------*/
+
+.encabezado a{
+    text-decoration: none;
+}
+.encabezado .overlay{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    transition: all 0.6s ease 0s;
+}
+.encabezado .overlay .overlay-content{
+    display: flex;
+    height:100%;
+    flex-direction: column;
+    align-items: center; /*Mantiene al centro de la pagina*/ 
+    justify-content: center; /*Mantiene al centro en una fila*/
+}
+.encabezado .overlay a{
+    padding: 22px;
+    font-size: 30px;
+    display: block;
+    transition: all 0.3s ease 0s;
+    font-weight: 500;
+    color: rgb(253, 163, 72);
+}
+.encabezado .overlay a:hover,
+.encabezado .overlay a:focus{
+    color: rgb(89, 159, 170);
+}
+.encabezado .overlay .close{
+    position: absolute; 
+    top: 20px;
+    right: 45px; 
+    font-size: 65px;
+}
+@media scren and (max-height:450px){
+    .encabezado .overlay a{
+        font-size: 20px;
+    }
+    .encabezado .overlay .close{
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+

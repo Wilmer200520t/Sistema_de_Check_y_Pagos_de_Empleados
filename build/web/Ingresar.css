@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    /*overflow: hidden; Agrega esta propiedad para evitar el desplazamiento */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("../SRC/fondoinicio.png");
+    background-position: center center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  form {
+    /* arriba, derecha, abajo, izquierda*/
+    padding: 50px 55px 160px 55px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 15px rgb(0, 0, 0, 0.2);
+    border-radius: 30px;
+    text-align: center;
+    width: 300px;
+    height: 352px;
+    flex-direction: column;
+    align-items: center;
+  }
+.registrarte_is{
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-weight: 100;
+    justify-content: center;
+    align-items: center;
+    
+}
+.registrarte_is a{
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    text-decoration: none;
+}
+.info_inicio_sesion{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-top: 30px;
+    justify-content: space-between; /* Cambiado a "space-between" para separar los elementos verticalmente */
+    
+}
+h2{
+    color: black;
+    font-size: 30px;
+    margin: 0;
+}
+.line{
+    display: inline-block;
+    width: 80px;
+    height: 8px;
+    background: linear-gradient(
+        90deg,
+        rgb(242, 221, 205) 0%,
+        rgb(244, 181, 113) 100%);
+    border-radius: 20px;
+}
+label{
+    color: black;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+input{
+    padding: 15px 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid rgb(211, 217, 219);
+    color:rgb(0, 0, 0);
+    outline: none;
+}
+input::placeholder{
+    color: rgb(178, 182, 182);
+}
+.boton_iniciar_sesion{
+    color: rgb(8, 8, 8);
+    font-size: 15px;
+    font-weight: 600;
+    border: 0;
+    border-radius: 25px;
+    background: linear-gradient(
+        90deg,
+        rgb(242, 221, 205) 0%,
+        rgb(244, 181, 113) 100%);
+    box-shadow: 0 0 20px rgb(166, 158, 151);
+    cursor: pointer;
+    width: 300px;
+    margin-top: 5px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+.boton_iniciar_sesion:hover{
+    background: linear-gradient(
+        90deg,
+        rgb(244, 181, 113) 0%,
+        rgb(242, 221, 205) 100%);
+}
+.mensajeDB{
+    color: red;
+    font-weight: 600;
+}
+a{
+    padding: 15px 10px;
+    border-radius: 10px;
+    color:rgb(0, 0, 0);
+    outline: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    
+}
+.boton_regresar {
+    color: rgb(8, 8, 8);
+    font-size: 15px;
+    font-weight: 600;
+    border: 0;
+    border-radius: 25px;
+    background: linear-gradient(
+        90deg,
+        rgb(242, 221, 205) 0%,
+        rgb(244, 181, 113) 100%);
+    box-shadow: 0 0 20px rgb(166, 158, 151);
+    cursor: pointer;
+    width: 300px;
+    content: center;
+    margin-top: 5px;
+    text-decoration: none; /* Para quitar la subrayado del enlace */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.boton_regresar:hover {
+    background: linear-gradient(
+        90deg,
+        rgb(244, 181, 113) 0%,
+        rgb(242, 221, 205) 100%);
+} 

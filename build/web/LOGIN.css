@@ -1,0 +1,100 @@
+
+*{
+    font-family: Arial;
+    color:black;
+	
+}
+body
+{
+    margin: 0;
+    padding: 0;
+    background-image: radial-gradient(circle at 1.94% 27.59%, #002c57 0, #002b59 10%, #002959 20%, #002759 30%, #002558 40%, #092256 50%, #1e1f53 60%, #2b1b4f 70%, #34174b 80%, #3c1346 90%, #430e40 100%);	
+    
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: blue;
+  font-family: cursive;
+  
+}
+
+.formulariocaja
+{
+    background:transparent;
+    width: 450px;
+    height: 500PX;
+    position: relative;
+    margin: auto;
+    padding: 1em;
+    border-radius: 3em;
+    color:black;
+}
+
+.cajaentradatexto
+{
+    width: 80%;
+    padding: 10px;
+    font-size:1em;
+    color:black;
+    background: white;
+    margin-bottom: 1.5em;
+    border-radius:2em;
+    border:0.1em solid white;
+}
+input::placeholder 
+{
+    color: #1E265D;
+    font-weight: bold;
+}
+.ref1
+{
+    margin-top:1em;
+    color:orange;
+}
+a
+{
+    text-decoration: none;
+    cursor:pointer;
+    color:orange;
+	
+}
+
+.botonenviar
+{
+    width: 38%;
+    padding: 0.8em;
+    cursor: pointer;
+    display: inline;
+    border: 0;
+    border-radius:2em;
+    border:1px solid black;
+    font-size:1em;
+    color:white;
+    background: #2E2F39;
+    text-align:center;
+    margin:1em 0.5em;
+    font-weight: bold;
+}
+
+img
+{	
+    border-radius: 50%;
+    padding:1em;
+    width:10em;
+    height:10em;
+    margin-bottom:2em;
+
+}
+
+footer 
+{
+    clear: both;
+    position: relative;
+    margin-top: -10%; 
+    color:white;
+    text-align:center;
+    font-size:1em;
+        
+}
