@@ -1,0 +1,73 @@
+
+form{
+    /*arriba, derecho, abajo, izquierda*/
+    padding: 30px 45px 40px 45px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 15px rgb(0,0,0,0.2);
+    border-radius: 30px;
+    
+}
+
+
+.marcar-c {
+    width: 50%;
+    margin: 0 auto;
+    position: absolute;
+    transform: translate(-50%, -60%);
+    top: 50%;
+    left: 50%;
+}
+
+.form-row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+select {
+    width: 50%;
+    padding: 7px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+}
+/* Cambiar el estilo del borde cuando se enfoca */
+select:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Cambiar el estilo de la flecha del select */
+select::-ms-expand {
+    display: none;
+}
+
+/* Estilo para las opciones del select */
+select option {
+    background-color: #fff;
+    color: #333;
+}
+.form-label {
+    flex-basis: 45%;
+    width: 48%;
+}
+
+.form-row input{
+    width: 48%;
+}
+
+h2{
+    text-align: center;
+    color: black;
+    font-size: 30px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.but{
+    width: 100% !important;
+}
+
+
