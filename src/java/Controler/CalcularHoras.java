@@ -93,9 +93,7 @@ public class CalcularHoras {
                     horaf = sumarhoras(temp, horaf);
                 }           
             }
-            
-            
-            
+               
         }
         horan=conversion(horan);
         horas=conversion(horas);

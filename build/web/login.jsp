@@ -1,5 +1,4 @@
-<%@page import="java.sql.*"%>
-<%@page import="Controler.conexion" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -47,82 +46,17 @@
             </div>
         </div>
     </header>
-    <%
-        conexion cn=new conexion();
-        Connection conex=cn.getConexion();
-        cn.st=conex.createStatement();
-     
-    %>
     <div class="marcar">
-        <form style="text-align: center" >
+        <form style="text-align: center" method="post" action="Login">
             <h1>Iniciar sesión </h1>
                  <input type="text" name="iduser" placeholder="&#128100; Usuario" class="cajaentradatexto">
                  <input type="txt" name="txtpassword"
                         placeholder="&#128274; Contraseña" class="cajaentradatexto">
                  <button type="submit" name="inicio" class="but" >Iniciar Sesion</button>
+                 ${respuesta}
         </form>
     </div>
-    <% 
-        if (request.getParameter("inicio") != null) {
-                    String id = request.getParameter("iduser");
-                    String password = request.getParameter("txtpassword");
-                    String error="";
-                    String promisseid="";
-                    String passpromisse="";
-                    int tuser=-1;
-                    
-                if (id.equals("") || password.equals("") ) {
-                    out.println("<input type='text' class='invisible login' "
-                                        + "data-text='Asegurese que el campo iduser y contraseña no este vacio.' "
-                                        + "data-icon='error' data-titulo='Rellene todos los campos' data-user='' data-num='camposvacios'>");
-                }else{
-                    try {
-                            int count = 0;
-                            String dbid = "", dbpass = "";
-                            cn.rs=cn.st.executeQuery("call sp_login_users("+id+",'"+password+"',@error,@promisse,@passpromisse)");
-                            while(cn.rs.next()){
-                                error=cn.rs.getString(1);
-                                promisseid=cn.rs.getString(2);
-                                passpromisse=cn.rs.getString(3);
-                                tuser=cn.rs.getInt(4);
-                            }
-                            if(error==null){
-                                if (passpromisse.equals(password)) {
-                                        String dir = "";
-                                        if (tuser == 1) {
-                                            dir = "cuadro.jsp";
-                                        } else if (tuser == 2) {
-                                            dir = "registro.jsp";
-                                        }
-                                        try {
-                                            response.sendRedirect(dir);
-                                            session.setAttribute("iduser", id);
-                                        } catch (Exception e) {
-                                            out.println(e);
-                                        }
-                                    
-                                }else{
-                                    out.println("<input type='text' class='invisible login' "
-                                        + "data-text='La contraseña no coincide con el id de usuario.' "
-                                        + "data-icon='error' data-titulo='Contraseña incorrecta' data-user='"+id+"'>");
-                                }
-                                
-                            }else{
-                                out.println("<input type='text' class='invisible login' "
-                                        + "data-text='"+error+"' "
-                                        + "data-icon='error' data-titulo='Error' data-user='"+id+"'>");
-                            }
-                            
-                            
-                    } catch (Exception e) {
-                        System.err.println(e);
-                    }
-                }
-         
-        }
-        
-     
-     %>
+
       
     
     <footer class="pie_pag">

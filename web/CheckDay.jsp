@@ -1,5 +1,4 @@
-<%@page import="java.sql.*"%>
-<%@page import="Controler.conexion" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -47,53 +46,16 @@
             </div>
         </div>
     </header>
-    <%
-        conexion cn=new conexion();
-        Connection conex=cn.getConexion();
-        cn.st=conex.createStatement();
-     
-    %>
+
     <div class="marcar">
-        <form  class="login-form" >
+        <form  class="login-form" action="CheckDay" method="post">
             <h2>Marcar Asistencia</h2>
             <input type="text" placeholder="&#128100; Iduser" name="iduser"><br><br>
-            <button type="submit" class="but" name="mark">Marcar</button>
-            
+            <button type="submit" class="but" name="mark" >Marcar</button>
+            ${respuesta}
         </form>
     </div>
-    <% 
-        if(request.getParameter("mark")!=null){
-            String iduser=request.getParameter("iduser");
-            String fecha="",hora="",tipo="";
-            int count=-1;
-            if(iduser.equals("")){}else{
-                try {
-                    cn.rs = cn.st.executeQuery("CALL sp_buscarUser(" + iduser + ")");
-                        while (cn.rs.next()) {
-                            count = cn.rs.getInt(1);
-                        }
-                            if (count == 1) {
-                                cn.rs = cn.st.executeQuery("CALL sp_check_(" + iduser + ")");
-                                while (cn.rs.next()) {
-                                    fecha = cn.rs.getString(1);
-                                    hora = cn.rs.getString(2);
-                                    tipo = cn.rs.getString(3);
-                                }
-                                out.println("<input type='text' class='invisible icheck' "
-                                        + "data-fecha='" + fecha + "' data-hora='" + hora + "' data-tipo='" + tipo + "' "
-                                        + "data-icon='success' data-titulo='Marcacion Correcta' data-user='" + iduser + "'>");
-                            } else {
-                                out.println("<input type='text' class='invisible icheck' "
-                                        + "data-fecha='' data-hora='' data-tipo='' "
-                                        + "data-icon='error' data-titulo='Usuario no Encontrado' data-user='" + iduser + "'>");
-                            }
-                } catch (Exception e) {
-                    out.print(e);
-                }
-            }
-        }
-    
-    %>
+
     
     <footer class="pie_pag">
         <div class="footer">
@@ -114,7 +76,7 @@
              </p>
         </div>
     </footer>
-
+     
     <script type="text/javascript" src="JS/Slide.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="JS/alerts.js"></script>
