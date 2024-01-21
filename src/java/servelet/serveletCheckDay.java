@@ -1,4 +1,3 @@
-
 package servelet;
 
 import java.io.IOException;
@@ -14,13 +13,14 @@ import javax.servlet.annotation.WebServlet;
 
 @WebServlet(name = "serveletCheckDay", urlPatterns = {"/CheckDay"})
 public class serveletCheckDay extends HttpServlet {
+
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse resp)throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
         try {
             conexion cn = new conexion();
             Connection conex = cn.getConexion();
             cn.st = conex.createStatement();
-            
+
             String iduser = request.getParameter("iduser");
             String fecha = "", hora = "", tipo = "";
             int count = -1;
@@ -37,14 +37,14 @@ public class serveletCheckDay extends HttpServlet {
                         hora = cn.rs.getString(2);
                         tipo = cn.rs.getString(3);
                     }
-                    String respuesta="<input type='text' class='invisible icheck' "
+                    String respuesta = "<input type='text' class='invisible icheck' "
                             + "data-fecha='" + fecha + "' data-hora='" + hora + "' data-tipo='" + tipo + "' "
                             + "data-icon='success' data-titulo='Marcacion Correcta' data-user='" + iduser + "'>";
                     request.setAttribute("respuesta", respuesta);
                     request.getRequestDispatcher("/CheckDay.jsp").forward(request, resp);
                 } else {
-                    
-                    String respuesta="<input type='text' class='invisible icheck' "
+
+                    String respuesta = "<input type='text' class='invisible icheck' "
                             + "data-fecha='' data-hora='' data-tipo='' "
                             + "data-icon='error' data-titulo='Usuario no Encontrado' data-user='" + iduser + "'>";
                     request.setAttribute("respuesta", respuesta);
@@ -55,10 +55,7 @@ public class serveletCheckDay extends HttpServlet {
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(serveletCheckDay.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
-    
+
     }
 
-   
 }

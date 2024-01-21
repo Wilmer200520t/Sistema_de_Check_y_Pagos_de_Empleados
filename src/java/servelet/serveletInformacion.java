@@ -14,21 +14,20 @@ import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "serveletInformacion", urlPatterns = {"/Buscar"})
 public class serveletInformacion extends HttpServlet {
+
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse resp)throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = request.getSession();
         String idper = request.getParameter("periodobusc");
         String iduser = (String) session.getAttribute("iduser");
-     
+
         session.setAttribute("iduser", iduser);
         session.setAttribute("datos", traerDatos(iduser));
-        session.setAttribute("pagos", informacionPagos(iduser,idper));
+        session.setAttribute("pagos", informacionPagos(iduser, idper));
         resp.sendRedirect("cuadro.jsp");
     }
 
-
-    
-    private String[] informacionPagos(String iduser,String idper){
+    private String[] informacionPagos(String iduser, String idper) {
         String datoUser[] = new String[16];
         if (idper == null) {
             idper = "0";
@@ -37,7 +36,7 @@ public class serveletInformacion extends HttpServlet {
             conexion cn = new conexion();
             Connection conex = cn.getConexion();
             cn.st = conex.createStatement();
-            cn.rs = cn.st.executeQuery("call SP_llamar_user_payments_works(" + iduser + ","+idper+")");
+            cn.rs = cn.st.executeQuery("call SP_llamar_user_payments_works(" + iduser + "," + idper + ")");
             while (cn.rs.next()) {
                 datoUser[0] = cn.rs.getString(31);
                 datoUser[1] = cn.rs.getString(25);
@@ -60,10 +59,10 @@ public class serveletInformacion extends HttpServlet {
         }
         return datoUser;
     }
-    
+
     private String[] traerDatos(String iduser) {
 
-        String datoUser[]=new String[8];
+        String datoUser[] = new String[8];
         try {
 
             conexion cn = new conexion();
@@ -80,7 +79,7 @@ public class serveletInformacion extends HttpServlet {
                 datoUser[6] = cn.rs.getString(16);
                 datoUser[7] = cn.rs.getString(20) + " - " + cn.rs.getString(23) + " - " + cn.rs.getString(22);
             }
-            
+
         } catch (ClassNotFoundException | SQLException e) {
             out.print(e);
         }

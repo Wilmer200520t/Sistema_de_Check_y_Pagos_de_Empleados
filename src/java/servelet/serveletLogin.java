@@ -85,10 +85,10 @@ public class serveletLogin extends HttpServlet {
         }
 
     }
-    
+
     private String[] traerDatos(String iduser) {
 
-        String datoUser[]=new String[8];
+        String datoUser[] = new String[8];
         try {
 
             conexion cn = new conexion();
@@ -105,14 +105,14 @@ public class serveletLogin extends HttpServlet {
                 datoUser[6] = cn.rs.getString(16);
                 datoUser[7] = cn.rs.getString(20) + " - " + cn.rs.getString(23) + " - " + cn.rs.getString(22);
             }
-            
+
         } catch (ClassNotFoundException | SQLException e) {
             out.print(e);
         }
         return datoUser;
     }
-    
-    private String[] informacionPagos(String iduser){
+
+    private String[] informacionPagos(String iduser) {
         String datoUser[] = new String[16];
 
         try {
@@ -142,5 +142,5 @@ public class serveletLogin extends HttpServlet {
         }
         return datoUser;
     }
-    
+
 }
